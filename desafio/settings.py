@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'grafos',  
         'USER': 'root',  
-        'PASSWORD': 'My_Admin!32',  
+        'PASSWORD': 'SuaSenha',  
         'HOST': '127.0.0.1',  
         'PORT': '3306',  
         'OPTIONS': {  
