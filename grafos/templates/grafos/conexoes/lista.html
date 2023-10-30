@@ -1,0 +1,57 @@
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card border-dark" data-aos="fade-in" data-aos-duration="750">
+                <div class="card-header"><b>Lista de Conexões</b></div>
+                    <div class="card-body">
+                        {% if conexoes|length > 0 %}
+                            <p class="card-text">Aqui está a lista de <code>Conexões</code> cadastradas.</p>
+
+                            <table class="table table-light table-striped table-hover align-middle">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Conexão A</th>
+                                    <th scope="col">Conexão B</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for conexao in conexoes %}
+                                    <tr>
+                                        <th scope="row">{{ conexao.id }}</th>
+                                        <td>{{ conexao.conexaoA }}</td>
+                                        <td>{{ conexao.conexaoB }}</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'atualiza_conexao' pk=conexao.id %}"
+                                               class="btn btn-primary btn-sm">
+                                                Atualizar
+                                            </a>
+                                            <a href="{% url 'deleta_conexao' pk=conexao.id %}"
+                                               class="btn btn-danger btn-sm">
+                                                Excluir
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <div class="text-center mt-5 mb-5 jumbotron">
+                                <h5>Nenhuma <code>Conexão</code> cadastrada ainda.</h5>
+                            </div>
+                        {% endif %}
+                        <hr/>
+                        <div class="text-end">
+                            <a href="{% url 'cadastra_conexao' %}" class="btn btn-primary btn-sm">
+                                Cadastrar Conexão
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+{% endblock %}

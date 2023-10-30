@@ -1,0 +1,82 @@
+{% block content %}
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header"><b>Atores</b></div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Mantenha os <code>Atores</code> da rede.
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'cadastra_ator' %}"
+                           class="btn btn-primary btn-sm">
+                            Cadastrar
+                        </a>
+                        <br>
+                        <a href="{% url 'lista_ator' %}"
+                           class="btn btn-primary btn-sm">
+                            Lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header"><b>Conexões</b></div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Mantenha as <code>Conexões</code> da rede.
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'cadastra_conexao' %}"
+                           class="btn btn-primary btn-sm">
+                            Cadastrar
+                        </a>
+                        <br>
+                        <a href="{% url 'lista_conexao' %}"
+                           class="btn btn-primary btn-sm">
+                            Lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <!-- ... seu código existente ... -->
+        <div class="row mb-5">
+            <!-- ... seu código existente ... -->
+            <br>
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header"><b>Dashboards</b></div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Acesse os <code>Dashboards</code>.
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'dashboard_page' %}" class="btn btn-primary btn-sm">
+                            Dashboard Atualizável
+                        </a>
+                        <br>
+                        <a href="{% url 'dashboard_page1' %}" class="btn btn-primary btn-sm">
+                            Dashboard Fixo
+                        </a>
+                        <br>
+                        <a href="{% url 'dashboard_page2' %}" class="btn btn-primary btn-sm">
+                            Dashboard Fixo 2
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

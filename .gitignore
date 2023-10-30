@@ -1,0 +1,35 @@
+# Arquivos gerados pelo sistema operacional
+_pycache_/
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+
+# Ambientes virtuais
+venv/
+env/
+*.pyc
+*.pyo
+db.sqlite3
+
+# Arquivos de configuração local
+*.env
+*.log
+
+# Arquivos de mídia e uploads (geralmente, você pode querer usar um serviço de armazenamento externo para esses arquivos)
+
+
+# Arquivos de configuração IDE (opcional, dependendo do seu ambiente de desenvolvimento)
+.vscode/
+.idea/
+
+# Arquivos de backup e temporários
+*.bak
+*.tmp
+
+# Arquivos gerados por ferramentas de construção
+staticfiles/
+node_modules/
+
+# Pasta 'dados'
+dados/

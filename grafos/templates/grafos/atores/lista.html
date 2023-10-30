@@ -1,0 +1,59 @@
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card border-dark" data-aos="fade-in" data-aos-duration="750">
+                <div class="card-header"><b>Lista de Atores</b></div>
+                    <div class="card-body">
+                        {% if atores|length > 0 %}
+                            <p class="card-text">Aqui está a lista de <code>Atores</code> cadastrados.</p>
+
+                            <table class="table table-light table-striped table-hover align-middle">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Link</th>
+                                    <th scope="col">Descrição</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for ator in atores %}
+                                    <tr>
+                                        <th scope="row">{{ ator.id }}</th>
+                                        <td>{{ ator.nome }}</td>
+                                        <td>{{ ator.link_imagem }}</td>
+                                        <td>{{ ator.descricao }}</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'atualiza_ator' pk=ator.id %}"
+                                               class="btn btn-primary btn-sm">
+                                                Atualizar
+                                            </a>
+                                            <a href="{% url 'deleta_ator' pk=ator.id %}"
+                                               class="btn btn-danger btn-sm">
+                                                Excluir
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <div class="text-center mt-5 mb-5 jumbotron">
+                                <h5>Nenhum <code>Ator</code> cadastrado ainda.</h5>
+                            </div>
+                        {% endif %}
+                        <hr/>
+                        <div class="text-end">
+                            <a href="{% url 'cadastra_ator' %}" class="btn btn-primary btn-sm">
+                                Cadastrar Ator
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+{% endblock %}
